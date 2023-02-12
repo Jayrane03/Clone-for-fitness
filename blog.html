@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexx.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script src="https://use.fontawesome.com/0787724f3c.js"></script>
+    <title>Train by your own | J.R Fitness.com</title>
+
+</head>
+
+<body class="bg_blog">
+    <section class=" sub-header blog-header">
+        <nav>
+            <a href="index.html"><img src="./Images/logo.jpg" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times menu_icons" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./blog.html">BLOG</a></li>
+                    <li><a href="./exercise.html">EXERCISE</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                    <li><a href="./store.php">STORE</a></li>
+                    <!-- <li><a href="./login_page.html">LOGIN</a></li> -->
+                    <li><a href="./cart.php"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars menu_icons" onclick="showMenu()"></i>
+        </nav>
+
+    </section>
+
+    <h1>Our Blogs and Reviews</h1>
+    <!-- about  -->
+    <div class="blogContainer">
+        <!-- <h1>Blogs By Jay - The Coder</h1>  -->
+        <div class="blogitem">
+            <h2>Hustle For Muscle !</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+                nisi lorem egestas vitae scel<span class="dots">...</span><span class="more">erisque enim ligula
+                    venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus
+                    vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at
+                    libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+                    venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor
+                    porta.</span></p>
+
+            <button onclick="readMore()"id="myBtn" class="buttons bg_btn btn bg-btn ">Read more</button>
+        </div>
+        <div class="blogitem">
+            <h2>Workout Is My Passion</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+                nisi lorem egestas vitae scel<span class="dots">...</span><span class="more">erisque enim ligula venenatis
+                    dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum
+                    augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed
+                    nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer
+                    fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+            <button class="buttons bg_btn btn ">Read more</button>
+        </div>
+        <div class="blogitem">
+            <h2>Train Daily</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+                nisi lorem egestas vitae scel<span class="dots">...</span><span class="more">erisque enim ligula venenatis
+                    dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum
+                    augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed
+                    nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer
+                    fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+            <button class="buttons bg_btn btn ">Read more</button>
+        </div>
+        <div class="blogitem">
+            <h2>Be Fit , Be Great !</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+                nisi lorem egestas vitae scel<span class="dots">...</span><span class="more">erisque enim ligula venenatis
+                    dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum
+                    augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed
+                    nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer
+                    fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+            <button onclick="readMore()" class="buttons bg_btn btn ">Read more</button>
+        </div>
+
+    </div>
+
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>At THE GYM, we’re about real fitness. <br> Our no-nonsense, results-driven culture was built on a history
+            rooted in weightlifting</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o "></i> by Jay Rane</p>
+    </section>
+
+    <!-- Java script code to toggle the menu bare -->
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+            navLinks.style.display = "block"
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        function readMore() {
+            const dots = document.getElementsByClassName("dots");
+            const moreText = document.getElementsByClassName("more");
+            const btnText = document.getElementsByClassName("bg-btn");
+          
+            if (dots.style.display === "block") {
+              dots.style.display = "none";
+              btnText.innerHTML = "Read Less";
+              moreText.style.display = "block";
+          
+            } else {
+              dots.style.display = "block";
+              btnText.innerHTML = "Read More";
+              moreText.style.display = "none";
+             
+            }
+          }
+
+          
+
+    </script>
+</body>
+
+</html>

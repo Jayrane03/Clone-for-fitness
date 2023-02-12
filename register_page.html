@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Muli",sans-serif;
+    background-color: black;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
+}
+.container{
+    margin: auto;
+    background-color: blueviolet;
+    padding: 23px 43px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+.container a{
+    text-decoration: none;
+    color: aquamarine;
+}
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background-color: aquamarine;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn:focus{
+    outline: 0;
+}
+.btn:active{
+    transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+}
+.text{
+    margin-top: 30px;
+
+}
+.form-control{
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+.form-control input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #fff;
+}
+.form-control input:focus,
+.form-control input:valid{
+    outline: 0;
+    border-bottom-color:aquamarine ;
+}
+.form-control label{
+    position: absolute;
+    top: 16px;
+    left: 0;
+    pointer-events: none;
+
+}
+.form-control label span{
+    display: inline-block;
+    font-size: 17px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    -webkit-transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    -moz-transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    -ms-transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+    -o-transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-control input:focus + label span,
+.form-control input:valid + label span{
+    color: aquamarine;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+}
+    </style>
+    <div class="container">
+        <h1>Register</h1>
+        <form>
+         <div class="form-control">
+            <input type="text" required />
+            <label>Enter your name</label>
+         </div>
+         <div class="form-control">
+            <input type="text" required />
+            <label>Enter your email</label>
+         </div>
+         <div class="form-control">
+            <input type="password" required />
+            <label>Create Password</label>
+         </div>
+         <div class="form-control">
+            <input type="password" required />
+            <label>Re-Enter your Password</label>
+         </div>
+         <button class="btn ca">Create Account</button>
+         <p class="text">Already have a account</p>
+         <a href="./login_page.html">Login here</a>
+         
+
+
+        </form>
+    </div>
+    <script>
+        const labels = document.querySelectorAll(".form-control label");
+     labels.forEach((label)=>{
+        label.innerHTML = label.innerText.split("").map(
+            (letter , idx) =>
+            `<span style="transition-delay:$(idx * 50)ms">${letter}</span>`
+        ).join("");
+     });
+    a =document.getElementsByClassName('ca').addEventlistener('click',()=>{
+        window.alert("Your account is created successfully")
+    })
+    </script>
+</body>
+</html>
