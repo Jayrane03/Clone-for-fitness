@@ -29,10 +29,10 @@
           <li><a href="./blog.html">BLOG</a></li>
           <li><a href="exercise.html">EXERCISE</a></li>
           <li><a href="./contact.html">CONTACT</a></li>
-          <li><a href="store.php">STORE</a></li>
+          <li><a href="./store.php" id="store_page">STORE</a></li>
           <li><a href="./login_page.html">LOGIN</a></li>
           <!-- <li><a href="./register_page.html">REGISTER</a></li> -->
-          <li><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
+          <li><a href="./cart.php"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
       </div>
       <i class="fa fa-bars menu_icons" onclick="showMenu()"></i>
@@ -148,7 +148,12 @@
 
   <!-- Java script code to toggle the menu bare -->
   <script>
+  function storego(){
 
+ var store= document.getElementById('store_page');
+ window.location.replace("store.php");
+
+  }
     var navLinks = document.getElementById("navLinks");
 
     function showMenu() {

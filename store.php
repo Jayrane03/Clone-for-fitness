@@ -33,9 +33,9 @@
             <li><a href="./blog.html">BLOG</a></li>
             <li><a href="./exercise.html">EXERCISE</a></li>
             <li><a href="./contact.html">CONTACT</a></li>
-            <li><a href="./store.html">STORE</a></li>
-            <!-- <li><a href="./login_page.html">LOGIN</a></li> -->
-            <li><a href="cart.php" id="cart_show"><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="./store.php">STORE</a></li>
+            <li><a href="./login_page.html">LOGIN</a></li>
+            <li><a href="./cart.php"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>l̥ō
      </div>   
      <i  class="fa fa-bars menu_icons" onclick="showMenu()"></i>

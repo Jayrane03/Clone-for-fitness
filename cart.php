@@ -1,10 +1,5 @@
-
 <?php
-// include('store.php');
 session_start();
-
-// session_destroy();
-
 
 
   ?>
@@ -33,13 +28,13 @@ session_start();
      <div class="nav-links" id="navLinks">
         <i id="menu_icons" class="fa fa-times " onclick="hideMenu()"></i>
         <ul id="u_links">
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="">EXERCISE</a></li>
-            <li><a href="">CONTACT</a></li>
-            <li><a href="store.php">STORE</a></li>
-            <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="./index.php">HOME</a></li>
+            <li><a href="./about.php">ABOUT</a></li>
+            <li><a href="./blog.php">BLOG</a></li>
+            <li><a href="./exercise.php">EXERCISE</a></li>
+            <li><a href="./contact.php">CONTACT</a></li>
+            <li><a href="./store.php">STORE</a></li>
+            <li><a href="./cart.php"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
      </div>   
      <i id="menu_icons"class="fa fa-bars" onclick="showMenu()"></i>
@@ -63,12 +58,13 @@ session_start();
          $total = 0;
         
          if(isset($_SESSION['cart'])){
-          foreach($_SESSION['cart'] as $key=> $value){  
+          foreach($_SESSION['cart'] as $key=> $value){ 
+           
                      
           // $sr = $key+1; 
+         
           $total = 0;
-            $subtotal = $total + (int) $value['Price'];
-            $total = $subtotal +'50';
+           
             echo '
            
             <tr class="tb-row">
@@ -79,7 +75,7 @@ session_start();
                     <div id="para">
                       
                       <p>'.$value['Item_Name'].'</p>
-                      <p>Rs <span id="item_price1">'.$value['Price'].'<input type="hidden" id="iprice" value="'.$value['Price'].'"></span></p>
+                      <p>Rs <span class="iprice">'.$value['Price'].'<input type="hidden" class="iprice" value="'.$value['Price'].'"></span></p>
                       <form action="manage_cart.php" method="POST">
                         <button name="Remove_Item" class="btn btn-sm btn-danger" style="background: blueviolet;
                         color: white;
@@ -96,12 +92,12 @@ session_start();
                   </div>
                 </td>
                 <td>
-                <input id="iquantity" type="number" onchange="subtot()" value="<?php echo '.$value['Quantity'].'; ?>" min="1" max="10" style="width: 50px; height: 50px; margin: 0 28px; text-align: center;">
+                <input class="iquantity" type="number" onchange="subtot()" value="<?php echo '.$value['Quantity'].'; ?>" min="1" max="10" style="width: 50px; height: 50px; margin: 0 28px; text-align: center;">
 
                 </td>
                 <td>
                   <div class="cart-price">
-                    <p>Rs <span id="itotal">'.$value['Price'].'</span></p>
+                    <p>Rs <span class="itotal">'.$value['Price'].'</span></p>
                   </div>
                 </td>
               </tr>';
@@ -117,8 +113,32 @@ session_start();
    <div class="total-price">
       <table>
          <tr>
+          
             <td>Sub Total</td>
-            <td>Rs <span id="sub_total"><?php echo $subtotal ?></span></td>
+            <td></td>
+            <td>
+          <?php
+          // $subtotal = $total + (int)$value['Price'];
+        
+          $subtotal = 0;
+     
+$value = array();
+if (is_array($value)) {
+  if (!array_key_exists('Price', $value)) {
+    $value['Price'] = 0;
+  }
+  $subtotal = $subtotal + (int)$value['Price'];
+} else {
+  echo "Error: value is not an array";
+}
+
+           
+          
+
+$subtotal = $subtotal + $value['Price'];
+            echo $subtotal
+            ?></td>
+           
          </tr>
          <tr>
             <td>Tax</td>
@@ -156,14 +176,15 @@ session_start();
     
     <!-- Java script code to toggle the menu bare -->
       <script>
-       var iprice = document.getElementById('iprice');
-var iquant = document.getElementById('cartiquantity');
-var itotal = document.getElementById('itotal');
+       var iprice = document.getElementsByClassName('iprice');
+var iquant = document.getElementsByClassName('cartiquantity');
+var itotal = document.getElementsByClassName('itotal');
 
 function subtot(){
+
   for(var i=0; i<iprice.length; i++){
-    itotal[i].innerText = (iprice[i].value * (iquant[i].value));
-    console.log(iquant.value)
+    itotal[i].innerText = (iprice[i].value)* (iquant[i].value);
+
   }
 }
 

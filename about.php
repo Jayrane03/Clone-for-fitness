@@ -22,14 +22,14 @@
      <div class="nav-links" id="navLinks">
         <i class="fa fa-times menu_icons" onclick="hideMenu()"></i>
         <ul>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="./exercise.html">EXERCISE</a></li>
-            <li><a href="./contact.html">CONTACT</a></li>
+            <li><a href="./index.php">HOME</a></li>
+            <li><a href="./about.php">ABOUT</a></li>
+            <li><a href="./blog.php">BLOG</a></li>
+            <li><a href="./exercise.php">EXERCISE</a></li>
+            <li><a href="./contact.php">CONTACT</a></li>
             <li><a href="./store.php">STORE</a></li>
-            <!-- <li><a href="./login_page.html">LOGIN</a></li> -->
-            <li><a href="./cart.cart"><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="./login_page.php">LOGIN</a></li>
+            <li><a href="./cart.php"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
      </div>   
      <i class="fa fa-bars menu_icons" onclick="showMenu()"></i>
